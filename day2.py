@@ -1,4 +1,4 @@
-input = open("inputs/day1.txt", 'r')
+input = open("inputs/day2.txt", 'r')
 
 values = input.read().splitlines()
 
@@ -8,10 +8,12 @@ horizontal = 0
 for value in values:
     if "forward " in value:
         mag = value[8:]
-        print(mag)
+        horizontal += int(mag)
     elif "down " in value:
         mag = value[5:]
-        print(mag)
+        vertical += int(mag)
     else:
         mag = value[3:]
-        print(mag)
+        vertical -= int(mag)
+
+print(vertical * horizontal)
