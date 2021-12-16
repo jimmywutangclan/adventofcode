@@ -1,5 +1,8 @@
+from collections import Counter
+from typing import List
 
-def decimal(binary):
+# convert binary array to decimal int
+def decimal(binary : List[str]) -> int:
     toReturn = 0
 
     for i in range(len(binary)):
@@ -14,31 +17,24 @@ def decimal(binary):
 
     return toReturn
 
-def gamma(values):
+# calculate the gamma
+def gamma(values : List[str]) -> List[str]:
     binaryNum = []
     
     bits = len(values[0])
-    zeroes = 0
-    ones = 0
-
+    
     for i in range(bits):
-        zeroes = 0
-        ones = 0
-
-        for value in values:
-            if value[i] == '0':
-                zeroes += 1
-            if value[i] == '1':
-                ones += 1
+        counter = Counter(num[i] for num in values)
             
-        if zeroes > ones:
+        if counter['0'] > counter['1']:
             binaryNum.append('0')
         else:
             binaryNum.append('1')
 
     return binaryNum
 
-def epsilon(binary):
+# invert the gamma array
+def epsilon(binary : List[str]) -> List[str]:
     binaryNum = []
 
     for digit in binary:
