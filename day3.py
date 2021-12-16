@@ -48,6 +48,7 @@ def epsilon(binary : List[str]) -> List[str]:
 input = open("inputs/day3.txt", 'r')
 values = input.read().splitlines()
 
+# gamma = most commonly occuring digit at each index, epsilon = the lesser occuring one
 gammaList = gamma(values)
 epsilonList = epsilon(gammaList)
 
